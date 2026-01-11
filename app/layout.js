@@ -64,6 +64,10 @@ export const metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
+  verification: {
+    google: "Ihz5Cd5vkNkVuh36pZjbyhECtbKBY5oZu7pMs4t5kXU",
+    yandex: "9c2f57198440537e",
+  },
 };
 
 export default function RootLayout({ children }) {
