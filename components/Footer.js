@@ -56,6 +56,16 @@ export default function Footer() {
                   Генератор палитр
                 </Link>
               </li>
+
+              <li>
+                <Link
+                  href="/ai-generator"
+                  className="hover:text-black transition-colors"
+                >
+                  ИИ-Генератор палитр
+                </Link>
+              </li>
+
               <li>
                 <Link
                   href="/contrast-checker"
@@ -131,10 +141,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/popular-colors"
+                  href="/explore-gradients"
                   className="hover:text-black transition-colors"
                 >
-                  Тренды 2026
+                  Градиентные схемы
                 </Link>
               </li>
             </ul>

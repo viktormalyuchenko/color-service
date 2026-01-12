@@ -94,6 +94,14 @@ export default function LandingPage() {
                 {item}
               </li>
             ))}
+            <div className="mt-10">
+              <Link
+                href="/ai-generator"
+                className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/20 active:scale-95"
+              >
+                Попробовать ИИ <ChevronRight size={16} />
+              </Link>
+            </div>
           </ul>
         </div>
 
@@ -166,6 +174,14 @@ export default function LandingPage() {
             проверяет палитру на соответствие международным стандартам WCAG
             прямо в процессе создания дизайна.
           </p>
+          <div className="mt-10">
+            <Link
+              href="/contrast-checker"
+              className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-green-700 transition-all shadow-xl shadow-green-500/20 active:scale-95"
+            >
+              Открыть радар <ChevronRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 

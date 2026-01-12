@@ -83,6 +83,12 @@ export default function Navbar() {
                   icon={<Zap size={16} />}
                 />
                 <MenuLink
+                  href="/ai-generator"
+                  title="ИИ-подбор"
+                  desc="Палитры по описанию"
+                  icon={<Sparkles size={16} />}
+                />
+                <MenuLink
                   href="/wheel"
                   title="Цветовой круг"
                   desc="Математика гармонии"
