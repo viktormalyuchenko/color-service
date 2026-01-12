@@ -5,3 +5,65 @@ body {
   margin: 0;
   font-family: inherit;
 }
+
+.prose-custom {
+  line-height: 1.7;
+  color: #374151; /* gray-700 */
+}
+
+/* Заголовки h2 */
+.prose-custom h2 {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 900;
+  color: #111827; /* gray-900 */
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+  display: block;
+}
+
+/* Заголовки h3 */
+.prose-custom h3 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 800;
+  color: #111827;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* Абзацы */
+.prose-custom p {
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Списки */
+.prose-custom ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose-custom li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Жирный текст */
+.prose-custom b,
+.prose-custom strong {
+  font-weight: 900;
+  color: #111827;
+}
+
+/* Цитаты */
+.prose-custom blockquote {
+  border-left: 4px solid #2563eb; /* blue-600 */
+  background-color: #eff6ff; /* blue-50 */
+  padding: 1.5rem 2rem;
+  border-radius: 0 1.5rem 1.5rem 0;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #1e3a8a; /* blue-900 */
+}
