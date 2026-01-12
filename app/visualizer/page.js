@@ -32,10 +32,19 @@ function VisualizerContent() {
   useEffect(() => {
     const colorsFromUrl = searchParams.get("colors");
     if (colorsFromUrl) {
-      const parsedColors = colorsFromUrl
-        .split("-")
+      let parsedColors = colorsFromUrl
+        .split(/[- ,]/)
         .map((c) => (c.startsWith("#") ? c : "#" + c));
-      setColors(parsedColors);
+
+      if (parsedColors.length < 5) {
+        const extraNeeded = 5 - parsedColors.length;
+        const extraColors = Array.from({ length: extraNeeded }).map(
+          () => generateColor().hex
+        );
+        parsedColors = [...parsedColors, ...extraColors];
+      }
+
+      setColors(parsedColors.slice(0, 5)); // Берем ровно 5
     }
   }, [searchParams]);
 
@@ -50,8 +59,14 @@ function VisualizerContent() {
     setTimeout(() => setCopied(null), 2000);
   };
 
-  const getContrast = (backColor) =>
-    chroma(backColor).luminance() > 0.5 ? "#1a1a1a" : "#ffffff";
+  const getContrast = (backColor) => {
+    if (!backColor) return "#1a1a1a";
+    try {
+      return chroma(backColor).luminance() > 0.5 ? "#1a1a1a" : "#ffffff";
+    } catch (e) {
+      return "#1a1a1a";
+    }
+  };
 
   // Форматы экспорта
   const cssExport = `:root {\n${colors

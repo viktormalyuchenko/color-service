@@ -1,13 +1,13 @@
 import Link from "next/link";
 import {
   Palette,
-  Sparkles,
-  ChevronRight,
-  Zap,
   ShieldCheck,
-  Globe,
   Layout,
-  Search,
+  Zap,
+  Sparkles,
+  Image as ImageIcon,
+  ChevronRight,
+  Globe,
 } from "lucide-react";
 import InteractiveBackground from "@/components/InteractiveBackground";
 
@@ -189,36 +189,43 @@ export default function LandingPage() {
               title: "Лаборатория палитр",
               desc: "Создавайте, редактируйте и фиксируйте цвета с помощью мощного генератора и ИИ.",
               icon: <Palette size={24} />,
+              href: "/palette-generator", // Ссылка на генератор
             },
             {
               title: "Радар контраста",
               desc: "Мгновенная проверка доступности текста по стандартам WCAG 2.1 в реальном времени.",
               icon: <ShieldCheck size={24} />,
+              href: "/contrast-checker", // Ссылка на контраст-чекер
             },
             {
               title: "Визуализатор",
               desc: "Смотрите, как ваша палитра выглядит на реальных макетах сайтов и мобильных приложений.",
               icon: <Layout size={24} />,
+              href: "/visualizer", // Ссылка на визуализатор
             },
             {
               title: "Стиль шрифтов",
               desc: "Автоматический подбор идеальной типографики под вашу цветовую схему.",
               icon: <Zap size={24} />,
+              href: "/font-styler", // Ссылка на шрифт-стайлер
             },
             {
               title: "Градиент-ателье",
               desc: "Создание плавных многоступенчатых градиентов с поддержкой CSS кода.",
               icon: <Sparkles size={24} />,
+              href: "/gradient-maker", // Ссылка на градиенты
             },
             {
-              title: "Библиотека схем",
-              desc: "Тысячи трендовых палитр, отсортированных по категориям, стилям и настроению.",
-              icon: <Search size={24} />,
+              title: "Цвета по картинке",
+              desc: "Мгновенно извлекайте гармоничные цветовые палитры из любых ваших фотографий.",
+              icon: <ImageIcon size={24} />, // Новая иконка
+              href: "/image-to-palette", // Ссылка на инструмент с фото
             },
           ].map((tool) => (
-            <div
+            <Link
+              href={tool.href}
               key={tool.title}
-              className="group p-10 rounded-[2.5rem] bg-white border border-gray-100 hover:border-gray-200 hover:shadow-2xl transition-all text-left"
+              className="group p-10 rounded-[2.5rem] bg-white border border-gray-100 hover:border-black hover:shadow-2xl transition-all text-left block"
             >
               <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform group-hover:bg-black group-hover:text-white">
                 {tool.icon}
@@ -226,10 +233,13 @@ export default function LandingPage() {
               <h3 className="text-2xl font-black mb-4 tracking-tight">
                 {tool.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed font-medium">
+              <p className="text-gray-400 leading-relaxed font-medium transition-colors group-hover:text-gray-600">
                 {tool.desc}
               </p>
-            </div>
+              <div className="mt-8 flex items-center gap-2 text-sm font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                Открыть инструмент <ChevronRight size={16} />
+              </div>
+            </Link>
           ))}
         </div>
       </section>
