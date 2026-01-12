@@ -1,6 +1,6 @@
-import { Mail, MessageCircle, Send } from "lucide-react";
+"use client"; // ОБЯЗАТЕЛЬНО ДОБАВИТЬ ЭТУ СТРОКУ
 
-export const metadata = { title: "Контакты | Paletto" };
+import { Mail, Send } from "lucide-react";
 
 export default function ContactsPage() {
   return (
@@ -15,12 +15,12 @@ export default function ContactsPage() {
           <div className="space-y-8">
             <p className="text-xl text-gray-500 font-medium leading-relaxed">
               У вас есть идеи по улучшению Paletto или вы нашли ошибку? Мы
-              всегда открыты для предложений и сотрудничества.
+              всегда открыты для предложений.
             </p>
 
             <div className="space-y-6">
               <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-black group-hover:text-white transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-black group-hover:text-white transition-all font-bold">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -32,38 +32,28 @@ export default function ContactsPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                  <Send size={20} />
-                </div>
-                <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-gray-400">
-                    Telegram
-                  </div>
-                  <div className="font-bold text-gray-900">@viktoor_design</div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-[3rem] border border-gray-100">
+          <div className="bg-gray-50 p-8 rounded-[3rem] border border-gray-100 shadow-inner">
+            {/* Обработчик onSubmit теперь будет работать, так как компонент клиентский */}
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="text"
                 placeholder="Ваше имя"
-                className="w-full p-4 rounded-2xl border-none outline-none focus:ring-2 focus:ring-black"
+                className="w-full p-5 rounded-2xl border-none outline-none focus:ring-2 focus:ring-black bg-white"
               />
               <input
                 type="email"
-                placeholder="Email"
-                className="w-full p-4 rounded-2xl border-none outline-none focus:ring-2 focus:ring-black"
+                placeholder="Ваш Email"
+                className="w-full p-5 rounded-2xl border-none outline-none focus:ring-2 focus:ring-black bg-white"
               />
               <textarea
                 placeholder="Ваше сообщение"
                 rows="4"
-                className="w-full p-4 rounded-2xl border-none outline-none focus:ring-2 focus:ring-black"
+                className="w-full p-5 rounded-2xl border-none outline-none focus:ring-2 focus:ring-black bg-white"
               ></textarea>
-              <button className="w-full bg-black text-white py-4 rounded-2xl font-black uppercase text-xs tracking-widest hover:scale-105 active:scale-95 transition-all">
+              <button className="w-full bg-black text-white py-5 rounded-2xl font-black uppercase text-xs tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-black/10">
                 Отправить
               </button>
             </form>
