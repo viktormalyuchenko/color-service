@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalFooter from "@/components/ConditionalFooter";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         <main>{children}</main>
-        <Footer />
+        <ConditionalFooter />
 
         {/* Яндекс.Метрика */}
         <Script id="yandex-metrika" strategy="afterInteractive">
